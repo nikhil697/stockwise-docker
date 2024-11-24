@@ -15,11 +15,12 @@ import io
 import urllib, base64
 from datetime import datetime
 
-user1='admin'
-Password='nikhil2002'
-host='blackrock.c3m8wyo4c5hq.ap-south-1.rds.amazonaws.com'
+user1='avnadmin'
+Password='AVNS_I15iqVxWAKG6fXYeDla'
+host='stockwise-nikhilchadha1537-34a9.i.aivencloud.com'
 # host="localhost"
-database='blackrock'
+database='defaultdb'
+port='16093'
 
 
 import yfinance as yf
@@ -32,13 +33,13 @@ import json
 from transformers import GPTJForCausalLM, GPT2Tokenizer
 import requests
 
-conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
 
 def login_page(request):
     return render(request, 'App/loginpage.html')
 
 def register(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
     if request.method == "POST":
         first_name = request.POST.get('first-name')
         last_name = request.POST.get('last-name')
@@ -75,7 +76,7 @@ def register(request):
         return render(request, 'App/loginpage.html')
     
 # def homepage(request):
-#     conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+#     conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
 
 #     if request.method== "POST":
 #         Email=request.POST.get("uname")
@@ -122,7 +123,7 @@ def register(request):
 #         return render(request, 'App/loginpage.html')
 
 def homepage(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
 
     if request.method == "POST":
         Email = request.POST.get("uname")
@@ -167,7 +168,7 @@ def homepage(request):
 
 
 def resetpass(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
 
     if request.method == 'POST':
         email_address = request.POST.get('email')
@@ -196,7 +197,7 @@ def resetsuccess(request):
     return render(request, 'App/resetsuccess.html')
 
 def module(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -239,7 +240,7 @@ def module(request):
     return render(request, 'App/modulepage.html', context)
 
 def contactus(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -281,7 +282,7 @@ def contactus(request):
     return render(request,'App/contactpage.html')
 
 def homepage1(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -582,7 +583,7 @@ import yfinance as yf
 
 @csrf_exempt
 def viewvalues(request):
-    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+    conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
     cursor = conne.cursor(dictionary=True)
 
     # Retrieve Email from the session
@@ -742,7 +743,7 @@ def mockstock(request):
         return render(request, 'App/mockstock.html', context)
 
     try:
-        conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database)
+        conne = mysql.connector.connect(user=user1, password=Password, host=host, database=database, port=port)
         cursor = conne.cursor(dictionary=True)
 
         # Fetch user details

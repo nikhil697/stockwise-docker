@@ -85,14 +85,24 @@ WSGI_APPLICATION = 'Hack.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'blackrock',
+#         'USER': 'admin',
+#         'PASSWORD': 'nikhil2002',
+#         'HOST': 'blackrock.c3m8wyo4c5hq.ap-south-1.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blackrock',
-        'USER': 'admin',
-        'PASSWORD': 'nikhil2002',
-        'HOST': 'blackrock.c3m8wyo4c5hq.ap-south-1.rds.amazonaws.com',
-        'PORT': '3306',
+        'NAME': 'defaultdb',
+        'USER': 'avnadmin',
+        'PASSWORD': 'AVNS_I15iqVxWAKG6fXYeDla',
+        'HOST': 'stockwise-nikhilchadha1537-34a9.i.aivencloud.com',
+        'PORT': '16093',
     }
 }
 
